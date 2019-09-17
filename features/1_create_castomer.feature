@@ -1,6 +1,6 @@
 Feature: Create a Customer
 
-  @1_create_customer_testcase
+  @create_customer_testcase
   Scenario: Create a customer (job) on boarding with test credentials
     Given I open browser.
     And I go to main page.

@@ -1,6 +1,6 @@
 Feature: Landing page Workspace https://hagedoo.de/arbeitsplatz
 
-  @10_workspace_landing
+  @workspace_landing
   Scenario: Landing page Workspace https://hagedoo.de/arbeitsplatz
     Given I open browser for workspace page.
     When I go to workspace landing page.

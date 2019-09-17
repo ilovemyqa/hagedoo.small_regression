@@ -1,6 +1,8 @@
 require 'selenium-webdriver'
 # require 'parallel'
 require 'cucumber'
+require 'capybara/cucumber'
+require 'report_builder'
 
 url = "http://#{ENV['BS_USERNAME']}:#{ENV['BS_AUTHKEY']}@hub-cloud.browserstack.com/wd/hub"
 
@@ -74,4 +76,43 @@ end
 
 at_exit do
   browser.quit
+end
+
+at_exit do
+
+  case ENV['REPORT'].upcase
+  when 'RUN'
+    ReportBuilder.input_path = "reports/cucumber.json"
+
+    ReportBuilder.configure do |config|
+      config.report_path = "reports/run"
+      config.report_types = [:json, :html]
+    end
+
+  when 'RERUN'
+    ReportBuilder.input_path = "reports/rerun_reports/cucumber.json"
+
+    ReportBuilder.configure do |config|
+      config.report_path = "reports/rerun_reports/rerun"
+      config.report_types = [:json, :html]
+    end
+
+  when 'RETRY_RERUN'
+    ReportBuilder.input_path = "reports/rerun_reports/retry/cucumber.json"
+
+    ReportBuilder.configure do |config|
+      config.report_path = "reports/rerun_reports/retry/retry-rerun"
+      config.report_types = [:json, :html]
+    end
+
+  else
+    p 'case not matching'
+
+  end
+
+  options = {
+      report_title: "Your Report title on #{ENV['REPORT']}"
+  }
+  ReportBuilder.build_report options
+
 end

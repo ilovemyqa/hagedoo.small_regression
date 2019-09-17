@@ -1,6 +1,6 @@
 Feature: Signup craftsman and activation and go account settings
 
-  @4_signup_craftsman_and_activation_and_go_account-settings
+  @signup_craftsman_and_activation_and_go_account_settings
   Scenario: Signup craftsman and activation and go account settings
     Given I go to registration craftsman  page.
     When Enter the firstname craftsman in the textbox.

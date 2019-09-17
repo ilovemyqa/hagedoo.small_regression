@@ -1,6 +1,6 @@
 Feature: Activation new user for Admin
 
-  @2_activation_new_user_for_admin
+  @activation_new_user_for_admin
   Scenario: Activation new user for Admin
     Given I open browser for test.
     And I go to page for autorization page.

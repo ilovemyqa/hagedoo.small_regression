@@ -1,1 +1,14 @@
-webdriver_search: --no-source  --color --format pretty --tags @webdriver_search
+webdriver_search: --no-source  --color --format pretty --tags –format html –out results.html
+
+1_test: --format html --out 1_testcase.html --format pretty --tags  @1_create_customer_testcase
+2_test: --format html --out 1_testcase.html --format pretty --tags  @2_activation_new_user_for_admin
+3_test: --format html --out 1_testcase.html --format pretty --tags  @3_register_shop_testcase
+4_test: --format html --out 1_testcase.html --format pretty --tags  @4_signup_craftsman_and_activation_and_go_account-settings
+5_test: --format html --out 1_testcase.html --format pretty --tags  @5_inviting_a_new_person_to_the_workspace
+6_test: --format html --out 1_testcase.html --format pretty --tags  @6_how_it_works
+7_test: --format html --out 1_testcase.html --format pretty --tags  @7_about_us
+8_test: --format html --out 1_testcase.html --format pretty --tags  @8_agb
+9_test: --format html --out 1_testcase.html --format pretty --tags  @9_handworker
+10_test: --format html --out 1_testcase.html --format pretty --tags  @10_workspace_landing
+11_test: --format html --out 1_testcase.html --format pretty --tags  @11_new_time_event
+

@@ -1,6 +1,6 @@
 Feature: Register a shop
 
-  @3_register_shop_testcase
+  @register_shop_testcase
   Scenario: Register a shop
     Given I go to register a shop page.
     When Enter the firstname in the textbox

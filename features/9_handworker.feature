@@ -1,6 +1,6 @@
 Feature: landing pages (craftsman) https://hagedoo.de/handwerker
 
-  @9_handworker
+  @handworker
   Scenario: landing pages (craftsman) https://hagedoo.de/handwerker
     Given I open browser for handworker page.
     When Enter the zipcode in the textbox.

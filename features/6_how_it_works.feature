@@ -1,6 +1,6 @@
 Feature: How it works https://hagedoo.de/wie-es-funktioniert
 
-  @6_how_it_works
+  @how_it_works
   Scenario: How it works https://hagedoo.de/wie-es-funktioniert
     Given I open browser for testing page.
     When I go to How it work page.

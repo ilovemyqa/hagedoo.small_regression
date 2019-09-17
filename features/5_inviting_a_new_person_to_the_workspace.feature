@@ -1,6 +1,6 @@
 Feature: Go to workspace and add new construction project
 
-  @5_inviting_a_new_person_to_the_workspace
+  @inviting_a_new_person_to_the_workspace
   Scenario: Go to workspace and add new construction project
     Given I open browser testcase.
     And I go to page for autorization page for authorization.

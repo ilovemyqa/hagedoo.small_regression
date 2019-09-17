@@ -1,6 +1,6 @@
 Feature: About us https://hagedoo.de/uber-uns
 
-  @7_about_us
+  @about_us
   Scenario: About us https://hagedoo.de/uber-uns
     Given I open browser for about us page.
     When I go to About us page.

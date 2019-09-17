@@ -1,6 +1,6 @@
 Feature: AGB https://hagedoo.de/tos
 
-  @8_agb
+  @agb
   Scenario: AGB https://hagedoo.de/tos
     Given I open browser for AGB page.
     When I go to AGB page.
