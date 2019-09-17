@@ -5,7 +5,7 @@ Given(/^I open browser for testing page\.$/) do
   @browser.navigate.to url
 end
 
-When(/^I go to How oi work page\.$/) do
+When(/^I go to How it work page\.$/) do
   @browser.find_element(xpath: "//li[@class='header-item header-how-it-works ']").click
   @wait.until { @browser.find_element(xpath: "//div[@class='header-container']").displayed? }
 end

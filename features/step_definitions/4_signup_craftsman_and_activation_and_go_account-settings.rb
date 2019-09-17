@@ -61,13 +61,13 @@ Given(/^I go to registration craftsman  page\.$/) do
   @wait = Selenium::WebDriver::Wait.new(timeout: 20)
   url = 'https://hagedoo.de/registrieren-handwerker'
   @browser.navigate.to url
-
-  if @browser.find_element(xpath: "//div[@class='count-container']/div[@class='cookieConsent cookie-cont']/button[@class='btn-cookie']")
-    @browser.find_element(xpath: "//div[@class='count-container']/div[@class='cookieConsent cookie-cont']/button[@class='btn-cookie']").click
-  end
 end
 
 When(/^Enter the firstname craftsman in the textbox\.$/) do
+  if @browser.find_element(xpath: "//div[@class='count-container']/div[@class='cookieConsent cookie-cont']/button[@class='btn-cookie']")
+    @browser.find_element(xpath: "//div[@class='count-container']/div[@class='cookieConsent cookie-cont']/button[@class='btn-cookie']").click
+  end
+
   first_name = 'testcraftsman' + my_craftsman.monthcraftsman + my_craftsman.daycraftsman.to_s + my_craftsman.timecraftsman.to_s + '.' + my_craftsman.timecraftsman_minutes.to_s
   @browser.find_element(xpath: "//input[@name='firstName']").send_keys first_name
 end
@@ -128,23 +128,23 @@ Then(/^I accept the terms and conditions and privacy policy for craftsman\.$/) d
 end
 
 And(/^I check the registration craftsman result\.$/) do
-  pending
+  puts 'empty step'
 end
 
 When(/^I go to mailforspam.com serves for activation craftsman\.$/) do
-  pending
+  puts 'empty step'
 end
 
 And(/^Enter the email textbox and click button\.$/) do
-  pending
+  puts 'empty step'
 end
 
 And(/^Open activation email and click button\.$/) do
-  pending
+  puts 'empty step'
 end
 
 And(/^Enter the password in the textboxs\.$/) do
-  pending
+  puts 'empty step'
 end
 
 Then(/^I check the activation craftsman result\.$/) do

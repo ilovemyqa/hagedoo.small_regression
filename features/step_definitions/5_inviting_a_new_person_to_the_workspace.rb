@@ -67,9 +67,7 @@ And(/^I go to page for autorization page for authorization\.$/) do
   @browser.find_element(xpath: "//li[@class='header-item header-button header-login ']/a").click
   @wait.until { @browser.find_element(xpath: "//form[@class='form']/h1[@class='login-title']").displayed? }
 
-  if @browser.find_element(xpath: "//div[@class='count-container']/div[@class='cookieConsent cookie-cont']/button[@class='btn-cookie']")
-    @browser.find_element(xpath: "//div[@class='count-container']/div[@class='cookieConsent cookie-cont']/button[@class='btn-cookie']").click
-  end
+  @browser.find_element(xpath: "//div[@class='count-container']/div[@class='cookieConsent cookie-cont']/button[@class='btn-cookie']").click
 end
 
 When(/^I enter the user data in the authorization form\.$/) do

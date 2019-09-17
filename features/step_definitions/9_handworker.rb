@@ -4,9 +4,6 @@ Given(/^I open browser for handworker page\.$/) do
   url = 'https://hagedoo.de/handwerker'
   @browser.navigate.to url
 
-  if @browser.find_element(xpath: "//div[@class='count-container']/div[@class='cookieConsent cookie-cont']/button[@class='btn-cookie']")
-    @browser.find_element(xpath: "//div[@class='count-container']/div[@class='cookieConsent cookie-cont']/button[@class='btn-cookie']").click
-  end
 end
 
 When(/^Enter the zipcode in the textbox\.$/) do

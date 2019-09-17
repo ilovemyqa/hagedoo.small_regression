@@ -65,12 +65,12 @@ Given(/^I go to register a shop page.$/) do
 end
 
 When(/^Enter the firstname in the textbox$/) do
-  first_name = 'testuser' + my_user.monthuser + my_user.dayuser.to_s + my_user.timeuser.to_s + '.' + my_user.timeuser_minutes.to_s
+  first_name = 'testuser' + my_user.monthuser + my_user.dayuser.to_s + my_user.timeuser.to_s + my_user.timeuser_minutes.to_s
   @browser.find_element(xpath: "//input[@name='firstName']").send_keys first_name
 end
 
 And(/^Enter the lastname in the textbox$/) do
-  last_name = 'testuser' + my_user.monthuser + my_user.dayuser.to_s + my_user.timeuser.to_s + '.' + my_user.timeuser_minutes.to_s
+  last_name = 'testuser' + my_user.monthuser + my_user.dayuser.to_s + my_user.timeuser.to_s + my_user.timeuser_minutes.to_s
   @browser.find_element(xpath: "//input[@name='lastName']").send_keys last_name
 end
 
@@ -85,7 +85,7 @@ And(/^Enter the email in the textbox$/) do
 end
 
 And(/^Enter the shop name in the textbox$/) do
-  store_name = 'testuser' + my_user.monthuser + my_user.dayuser.to_s + my_user.timeuser.to_s + '.' + my_user.timeuser_minutes.to_s + 'company'
+  store_name = 'testuser' + my_user.monthuser + my_user.dayuser.to_s + my_user.timeuser.to_s + my_user.timeuser_minutes.to_s + 'company'
   @browser.find_element(xpath: "//input[@name='storeName']").send_keys store_name
 end
 

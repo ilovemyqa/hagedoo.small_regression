@@ -1,5 +1,5 @@
 require 'selenium-webdriver'
-require 'parallel'
+# require 'parallel'
 require 'cucumber'
 
 url = "http://#{ENV['BS_USERNAME']}:#{ENV['BS_AUTHKEY']}@hub-cloud.browserstack.com/wd/hub"
@@ -63,7 +63,7 @@ else
 end
 
 if ENV['BS_PLATFORM'] == 'LOCAL'
-  browser = Selenium::WebDriver.for :chrome, driver_path: to_chrome_win_path
+  browser = Selenium::WebDriver.for :chrome, driver_path: to_chrome_mac_path
 else
   browser = Selenium::WebDriver.for(:remote, :url => url, :desired_capabilities => capabilities)
 end

@@ -6,13 +6,10 @@ Given(/^I open browser for AGB page\.$/) do
 end
 
 When(/^I go to AGB page\.$/) do
-  if @browser.find_element(xpath: "//div[@class='count-container']/div[@class='cookieConsent cookie-cont']/button[@class='btn-cookie']")
-    @browser.find_element(xpath: "//div[@class='count-container']/div[@class='cookieConsent cookie-cont']/button[@class='btn-cookie']").click
-  end
 
   @browser.find_element(xpath: "//div[@class='footer-block legal-links']/ul/li/a[@href='/datenschutz']")
   my_btn = @browser.find_element(xpath: "//div[@class='footer-block legal-links']/ul/li/a[@href='/datenschutz']")
-  my_btn.location_once_scrolled_into_view
+  #my_btn.location_once_scrolled_into_view
   @browser.find_element(xpath: "//div[@class='footer-block legal-links']/ul/li/a[@href='/tos']").click
   @wait.until { @browser.find_element(xpath: "//div[@class='content-wrapper']/div[@class='Styles-sc-8vc1jc-0 kpWbXn']/h2[@class='title']").displayed? }
 end
@@ -34,7 +31,7 @@ And(/^I find element button 2 for AGB page\.$/) do
   @browser.find_element(xpath: "//ul[@class='anchors']/li/a[@href='#paragraph1']")
   my_btn_p2 = @browser.find_element(xpath: "//ul[@class='anchors']/li/a[@href='#paragraph1']")
   my_btn_p2.location_once_scrolled_into_view
-  my_btn_p2.click
+  @browser.find_element(xpath: "//ul[@class='anchors']/li/a[@href='#paragraph1']").click
 
   @browser.find_element(xpath: "//div[@class='paragraphs']/div/h4[@id='leistungserbringung']")
 end
@@ -43,7 +40,7 @@ And(/^I find element button 3 for AGB page\.$/) do
   @browser.find_element(xpath: "//ul[@class='anchors']/li/a[@href='#paragraph2']")
   my_btn_p3 = @browser.find_element(xpath: "//ul[@class='anchors']/li/a[@href='#paragraph2']")
   my_btn_p3.location_once_scrolled_into_view
-  my_btn_p3.click
+  @browser.find_element(xpath: "//ul[@class='anchors']/li/a[@href='#paragraph2']").click
 
   @browser.find_element(xpath: "//div[@class='paragraphs']/div/h4[@id='vertragsschluss']")
 end
@@ -51,8 +48,8 @@ end
 And(/^I find element button 4 for AGB page\.$/) do
   @browser.find_element(xpath: "//ul[@class='anchors']/li/a[@href='#paragraph3']")
   my_btn_p4 = @browser.find_element(xpath: "//ul[@class='anchors']/li/a[@href='#paragraph3']")
-  my_btn_p4.location_once_scrolled_into_view
-  my_btn_p4.click
+  #my_btn_p4.location_once_scrolled_into_view
+  @browser.find_element(xpath: "//ul[@class='anchors']/li/a[@href='#paragraph3']").click
 
   @browser.find_element(xpath: "//div[@class='paragraphs']/div/h4[@id='pflichten']")
 end
@@ -61,7 +58,7 @@ And(/^I find element button 5 for AGB page\.$/) do
   @browser.find_element(xpath: "//ul[@class='anchors']/li/a[@href='#paragraph4']")
   my_btn_p5 = @browser.find_element(xpath: "//ul[@class='anchors']/li/a[@href='#paragraph4']")
   my_btn_p5.location_once_scrolled_into_view
-  my_btn_p5.click
+  @browser.find_element(xpath: "//ul[@class='anchors']/li/a[@href='#paragraph4']").click
 
   @browser.find_element(xpath: "//div[@class='paragraphs']/div/h4[@id='vergütung']")
 end
@@ -70,7 +67,7 @@ And(/^I find element button 6 for AGB page\.$/) do
   @browser.find_element(xpath: "//ul[@class='anchors']/li/a[@href='#paragraph5']")
   my_btn_p6 = @browser.find_element(xpath: "//ul[@class='anchors']/li/a[@href='#paragraph5']")
   my_btn_p6.location_once_scrolled_into_view
-  my_btn_p6.click
+  @browser.find_element(xpath: "//ul[@class='anchors']/li/a[@href='#paragraph5']").click
 
   @browser.find_element(xpath: "//div[@class='paragraphs']/div/h4[@id='vertragsänderungen']")
 end
@@ -115,7 +112,7 @@ And(/^I find element button 11 for AGB page\.$/) do
   @browser.find_element(xpath: "//ul[@class='anchors']/li/a[@href='#paragraph10']")
   my_btn_p11 = @browser.find_element(xpath: "//ul[@class='anchors']/li/a[@href='#paragraph10']")
   my_btn_p11.location_once_scrolled_into_view
-  my_btn_p11.click
+  @browser.find_element(xpath: "//ul[@class='anchors']/li/a[@href='#paragraph10']")
 
   @browser.find_element(xpath: "//div[@class='paragraphs']/div/h4[@id='streitbeilegungsverfahren']")
 end

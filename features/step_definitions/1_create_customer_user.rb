@@ -64,7 +64,7 @@ Given(/^I open browser\.$/) do
 end
 
 And(/^I go to main page\.$/) do
-  @browser.find_element(xpath: "//li[@class='header-item header-button header-login ']/a").click
+  @browser.find_element(xpath: "//li[@class='header-item header-button header-login ']/a[.='Login']").click
   @wait.until { @browser.find_element(xpath: "//form[@class='form']/h1[@class='login-title']").displayed? }
   @browser.find_element(xpath: "//div[@class='workspace']/div[@class='btn-group']/a[@class='new-login']")
   my_btn = @browser.find_element(xpath: "//div[@class='workspace']/div[@class='btn-group']/a[@class='new-login']")
