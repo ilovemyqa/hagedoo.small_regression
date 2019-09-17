@@ -1,7 +1,6 @@
 require 'selenium-webdriver'
 require 'parallel'
 require 'cucumber'
-require 'rspec'
 
 url = "http://#{ENV['BS_USERNAME']}:#{ENV['BS_AUTHKEY']}@hub-cloud.browserstack.com/wd/hub"
 
