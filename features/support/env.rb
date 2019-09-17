@@ -63,7 +63,7 @@ else
 end
 
 if ENV['BS_PLATFORM'] == 'LOCAL'
-  browser = Selenium::WebDriver.for :chrome, driver_path: to_chrome_mac_path
+  browser = Selenium::WebDriver.for :chrome, driver_path: to_chrome_win_path
 else
   browser = Selenium::WebDriver.for(:remote, :url => url, :desired_capabilities => capabilities)
 end
