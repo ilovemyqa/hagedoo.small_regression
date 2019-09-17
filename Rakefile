@@ -1,14 +1,16 @@
+# frozen_string_literal: true
+
 require 'rubygems'
 require 'cucumber'
 require 'cucumber/rake/task'
 
-#require 'parallel'
+# require 'parallel'
 
-#@browsers = JSON.load(open('browsers.json'))
-#@parallel_limit = ENV['BS_PLATFORM'] || 1
-#@parallel_limit = @parallel_limit.to_i
+# @browsers = JSON.load(open('browsers.json'))
+# @parallel_limit = ENV['BS_PLATFORM'] || 1
+# @parallel_limit = @parallel_limit.to_i
 
-#task :cucumber do
+# task :cucumber do
 #  Parallel.each(@browsers, :in_processes => @parallel_limit) do |browser|
 #    begin
 #      puts "Running with: #{browser.inspect}"
@@ -18,9 +20,9 @@ require 'cucumber/rake/task'
 #      puts "Error while running task"
 #    end
 #  end
-#end
+# end
 
-#task :cucumber do
+# task :cucumber do
 #  begin
 #    #puts "Running with: #{@browser.}"
 
@@ -28,11 +30,10 @@ require 'cucumber/rake/task'
 #  rescue Exception => e
 #    puts "Error while running task"
 #  end
-#end
+# end
 
-
-#Cucumber::Rake::Task.new(:run_features)
-#task :default => [:cucumber]
+# Cucumber::Rake::Task.new(:run_features)
+# task :default => [:cucumber]
 #
 
 Cucumber::Rake::Task.new(:create_customer_testcase) do |t| # 1
