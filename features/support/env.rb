@@ -4,28 +4,34 @@ require 'cucumber'
 require 'capybara/cucumber'
 require 'report_builder'
 
-ENV['BS_USERNAME'] = 'marcborowy1'
-ENV['BS_AUTHKEY'] = 'qxqmjPtLVVfyRvuSBmR4'
+#ENV['BS_USERNAME'] = 'marcborowy1'
+#ENV['BS_AUTHKEY'] = 'qxqmjPtLVVfyRvuSBmR4'
 
 #ENV['BS_PLATFORM'] = 'WINDOWS10'
 
-url = "http://#{ENV['BS_USERNAME']}:#{ENV['BS_AUTHKEY']}@hub-cloud.browserstack.com/wd/hub"
+#url = "http://#{ENV['BS_USERNAME']}:#{ENV['BS_AUTHKEY']}@hub-cloud.browserstack.com/wd/hub"
+url = "http://marcborowy1:qxqmjPtLVVfyRvuSBmR4@hub-cloud.browserstack.com/wd/hub"
 
 capabilities = Selenium::WebDriver::Remote::Capabilities.new
 
-capabilities['project'] = ENV['BS_AUTOMATE_PROJECT'] if ENV['BS_AUTOMATE_PROJECT']
-capabilities['build'] = ENV['BS_AUTOMATE_BUILD'] if ENV['BS_AUTOMATE_BUILD']
+#capabilities['project'] = ENV['BS_AUTOMATE_PROJECT'] if ENV['BS_AUTOMATE_PROJECT']
+#capabilities['build'] = ENV['BS_AUTOMATE_BUILD'] if ENV['BS_AUTOMATE_BUILD']
 
-if ENV['BS_AUTOMATE_OS']
-  capabilities['os'] = ENV['BS_AUTOMATE_OS']
-  capabilities['os_version'] = ENV['BS_AUTOMATE_OS_VERSION']
-else
-  capabilities['platform'] = ENV['SELENIUM_PLATFORM'] || 'ANY'
-  #capabilities['platform'] = ENV['BS_PLATFORM']
-end
+#if ENV['BS_AUTOMATE_OS']
+#  capabilities['os'] = ENV['BS_AUTOMATE_OS']
+#  capabilities['os_version'] = ENV['BS_AUTOMATE_OS_VERSION']
+#else
+#  capabilities['platform'] = ENV['SELENIUM_PLATFORM'] || 'ANY'
+#  #capabilities['platform'] = ENV['BS_PLATFORM']
+#end
 
-capabilities['browser'] = ENV['SELENIUM_BROWSER'] || 'chrome'
-capabilities['browser_version'] = ENV['SELENIUM_VERSION'] if ENV['SELENIUM_VERSION']
+capabilities['browser'] = 'Chrome'
+capabilities['browser_version'] = '76.0'
+capabilities['os'] = 'Windows'
+capabilities['os_version'] = '10'
+capabilities['resolution'] = '1920x1080'
+#capabilities['browser'] = ENV['SELENIUM_BROWSER'] || 'chrome'
+#capabilities['browser_version'] = ENV['SELENIUM_VERSION'] if ENV['SELENIUM_VERSION']
 capabilities['name'] = 'Hagedoo.de small regression'
 
 capabilities['browserstack.local'] = 'true'
@@ -70,12 +76,6 @@ browser = Selenium::WebDriver.for(:remote, :url => url, :desired_capabilities =>
 #  capabilities['os_version'] = '7'
 #  capabilities['resolution'] = '1920x1080'
 #end
-
-capabilities['browser'] = 'Chrome'
-capabilities['browser_version'] = '76.0'
-capabilities['os'] = 'Windows'
-capabilities['os_version'] = '10'
-capabilities['resolution'] = '1920x1080'
 
 #if ENV['BS_PLATFORM'] == 'LOCAL'
 #  browser = Selenium::WebDriver.for :chrome, driver_path: to_chrome_mac_path
