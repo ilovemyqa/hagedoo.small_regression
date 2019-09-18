@@ -4,6 +4,9 @@ require 'cucumber'
 require 'capybara/cucumber'
 require 'report_builder'
 
+ENV['BS_USERNAME'] = 'marcborowy1'
+ENV['BS_AUTHKEY'] = 'qxqmjPtLVVfyRvuSBmR4'
+
 url = "http://#{ENV['BS_USERNAME']}:#{ENV['BS_AUTHKEY']}@hub-cloud.browserstack.com/wd/hub"
 
 capabilities = Selenium::WebDriver::Remote::Capabilities.new
