@@ -7,7 +7,7 @@ require 'report_builder'
 ENV['BS_USERNAME'] = 'marcborowy1'
 ENV['BS_AUTHKEY'] = 'qxqmjPtLVVfyRvuSBmR4'
 
-ENB['BS_PLATFORM'] = 'WINDOWS10'
+ENV['BS_PLATFORM'] = 'WINDOWS10'
 
 url = "http://#{ENV['BS_USERNAME']}:#{ENV['BS_AUTHKEY']}@hub-cloud.browserstack.com/wd/hub"
 
