@@ -35,6 +35,8 @@ capabilities['browserstack.console'] = 'errors'
 capabilities['browserstack.networkLogs'] = 'true'
 capabilities['browserstack.appiumLogs'] = 'true'
 
+browser = Selenium::WebDriver.for(:remote, :url => url, :desired_capabilities => capabilities)
+
 #if ENV['BS_PLATFORM'] == 'MAC_MOJAVE_CHROME'
 #  capabilities['browser'] = 'Chrome'
 #  capabilities['browser_version'] = '76.0'
@@ -55,12 +57,12 @@ capabilities['browserstack.appiumLogs'] = 'true'
 #  capabilities['resolution'] = '1920x1080'
 #elsif ENV['BS_PLATFORM'] == 'LOCAL'
   # Browser Chrome for macOS and Windows
-  to_chrome_mac_path = 'drivers/macOS/chromedriver' # Chrome driver for macOS
-  to_chrome_win_path = 'drivers/Windows/chromedriver.exe' # Chrome driver for Windows
+#  to_chrome_mac_path = 'drivers/macOS/chromedriver' # Chrome driver for macOS
+#  to_chrome_win_path = 'drivers/Windows/chromedriver.exe' # Chrome driver for Windows
 
   # Browser Firefox for macOS and Windows
-  to_firefox_mac_path = 'drivers/Windows/geckodriver.exe' # Firefox driver for macOS
-  to_firefox_win_path = 'drivers/Windows/geckodriver.exe' # Firefox driver for Windows
+#  to_firefox_mac_path = 'drivers/Windows/geckodriver.exe' # Firefox driver for macOS
+#  to_firefox_win_path = 'drivers/Windows/geckodriver.exe' # Firefox driver for Windows
 #else
 #  capabilities['browser'] = 'Chrome'
 #  capabilities['browser_version'] = '76.0'
@@ -80,8 +82,6 @@ capabilities['resolution'] = '1920x1080'
 #else
 #  browser = Selenium::WebDriver.for(:remote, :url => url, :desired_capabilities => capabilities)
 #end
-
-browser = Selenium::WebDriver.for(:remote, :url => url, :desired_capabilities => capabilities)
 
 Before do |scenario|
   @browser = browser
