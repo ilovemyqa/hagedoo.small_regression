@@ -69,11 +69,13 @@ else
   capabilities['resolution'] = '1920x1080'
 end
 
-if ENV['BS_PLATFORM'] == 'LOCAL'
-  browser = Selenium::WebDriver.for :chrome, driver_path: to_chrome_mac_path
-else
-  browser = Selenium::WebDriver.for(:remote, :url => url, :desired_capabilities => capabilities)
-end
+#if ENV['BS_PLATFORM'] == 'LOCAL'
+#  browser = Selenium::WebDriver.for :chrome, driver_path: to_chrome_mac_path
+#else
+#  browser = Selenium::WebDriver.for(:remote, :url => url, :desired_capabilities => capabilities)
+#end
+
+browser = Selenium::WebDriver.for(:remote, :url => url, :desired_capabilities => capabilities)
 
 Before do |scenario|
   @browser = browser
