@@ -1,8 +1,9 @@
 Given(/^I open browser for testing page\.$/) do
   @browser.manage.window.maximize
   @wait = Selenium::WebDriver::Wait.new(timeout: 20)
-  url = 'https://hagedoo.de'
-  @browser.navigate.to url
+  # url = 'https://hagedoo.de'
+  @url_project = 'https://staging.hagedoo.de/'
+  @browser.navigate.to @url_project
 end
 
 When(/^I go to How it work page\.$/) do

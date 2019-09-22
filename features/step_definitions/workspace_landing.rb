@@ -1,8 +1,9 @@
 Given(/^I open browser for workspace page\.$/) do
   @browser.manage.window.maximize
   @wait = Selenium::WebDriver::Wait.new(timeout: 20)
-  url = 'https://hagedoo.de/'
-  @browser.navigate.to url
+  # url = 'https://hagedoo.de/'
+  @url_project = 'https://staging.hagedoo.de/'
+  @browser.navigate.to @url_project
 end
 
 When(/^I go to workspace landing page\.$/) do
@@ -63,15 +64,15 @@ And(/^I find autorization menu\.$/) do
 
   @browser.find_element(xpath: "//div[@class='hagebau-service']/div[@class='buttons-block']/button[@class='register']").click
   @wait.until { @browser.find_element(xpath: "//div[@class='container']/h1[@class='title']").displayed? }
-  url_1 = 'https://hagedoo.de/arbeitsplatz'
-  @browser.navigate.to url_1
+  # url_1 = 'https://hagedoo.de/arbeitsplatz'
+  @browser.navigate.to @url_project + 'arbeitsplatz'
 
   my_el5 = @browser.find_element(xpath: "//div[@class='hagebau-service']")
   my_el5.location_once_scrolled_into_view
 
   @browser.find_element(xpath: "//div[@class='hagebau-service']/div[@class='buttons-block']/button[@class='login']").click
-  url_2 = 'https://hagedoo.de/arbeitsplatz'
-  @browser.navigate.to url_2
+  # url_2 = 'https://hagedoo.de/arbeitsplatz'
+  @browser.navigate.to @url_project + 'arbeitsplatz'
 
   my_el6 = @browser.find_element(xpath: "//div[@class='hagebau-service']")
   my_el6.location_once_scrolled_into_view

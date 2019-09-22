@@ -59,8 +59,9 @@ my_craftsman.timecraftsman_minutes
 Given(/^I go to registration craftsman  page\.$/) do
   @browser.manage.window.maximize
   @wait = Selenium::WebDriver::Wait.new(timeout: 20)
-  url = 'https://hagedoo.de/registrieren-handwerker'
-  @browser.navigate.to url
+  # url = 'https://hagedoo.de/registrieren-handwerker'
+  @url_project = 'https://staging.hagedoo.de/'
+  @browser.navigate.to @url_project + 'registrieren-handwerker'
 end
 
 When(/^Enter the firstname craftsman in the textbox\.$/) do
@@ -92,6 +93,7 @@ And(/^Enter the adress in the textbox\.$/) do
 
   if @browser.find_element(xpath: "//textarea[.='']")
     @browser.find_element(xpath: "//textarea[@name='address']").send_keys company_adress
+    @browser.find_element(xpath: "//textarea[@name='address']").click
     puts company_adress
   else
     puts 'sdfs'
@@ -111,20 +113,20 @@ And(/^Enter the partner name in th textbox\.$/) do
 end
 
 Then(/^I accept the terms and conditions and privacy policy for craftsman\.$/) do
-  # @browser.find_element(xpath: "//input[@class='check']").click
+  my_btn0 = @browser.find_element(xpath: "//input[@name='accept']")
+  my_btn0.location_once_scrolled_into_view
+  @browser.find_element(xpath: "//input[@name='accept']").click
+  @browser.find_element(xpath: "//input[@name='policy']").click
 
-  @browser.find_element(xpath: "//input[@class='check']").click
-  # my_btn0 = @browser.find_element(xpath: "//input[@class='check']")
-  # my_btn0.location_once_scrolled_into_view
-  # my_btn0.click
+  # @wait.until {
+  #  @browser.find_element(xpath: "//button[@class='submitButton']").displayed?
+  # }
 
-  @wait.until { @browser.find_element(xpath: "//div[@class='confirm']/label/input[@class='check']/div[@class='buttons-next']").displayed? }
-
-  @browser.find_element(xpath: "//div[@class='confirm']/label/input[@class='check']/div[@class='buttons-next']").click
-  @browser.find_element(xpath: "//div[@class='confirm']/label/input[@class='check']/div[@class='buttons-next']")
-  my_btn = @browser.find_element(xpath: "//div[@class='confirm']/label/input[@class='check']/div[@class='buttons-next']")
-  my_btn.location_once_scrolled_into_view
-  @browser.find_element(xpath: "//div[@class='confirm']/label/input[@class='check']/div[@class='buttons-next']").click
+  if @browser.find_element(xpath: "//div[@class='container']/form/button[@disabled]")
+    @browser.find_element(xpath: "//div[@class='container']/form/button[@class='submitButton']").click
+  else
+    puts 'Button if not found!'
+  end
 end
 
 And(/^I check the registration craftsman result\.$/) do

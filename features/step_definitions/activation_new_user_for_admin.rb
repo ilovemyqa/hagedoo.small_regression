@@ -1,8 +1,9 @@
 Given(/^I open browser for test\.$/) do
   @browser.manage.window.maximize
   @wait = Selenium::WebDriver::Wait.new(timeout: 20)
-  url = 'https://hagedoo.de'
-  @browser.navigate.to url
+  # url = 'https://hagedoo.de'
+  @url_project = 'https://staging.hagedoo.de/'
+  @browser.navigate.to @url_project
 end
 
 And(/^I go to page for autorization page\.$/) do
@@ -12,7 +13,8 @@ end
 
 When(/^I enter the admin data in the authorization form\.$/) do
   login_email_admin = "admin@mail.com"
-  password_admin_ch1 = '`R9)re4bWGVk@MFv:!"aDc9d`aPj^{;MD5-M'
+  # password_admin_ch1 = '`R9)re4bWGVk@MFv:!"aDc9d`aPj^{;MD5-M'
+  password_admin_ch1 = '9de7f8b4-2092-4dd9-a8db-551afd1fd13f'
 
   @browser.find_element(xpath: "//input[@id='email-field']").send_keys login_email_admin
   @browser.find_element(xpath: "//input[@id='password-field']").send_keys password_admin_ch1

@@ -59,8 +59,9 @@ my_new_member.timemember_minutes
 Given(/^I open browser testcase\.$/) do
   @browser.manage.window.maximize
   @wait = Selenium::WebDriver::Wait.new(timeout: 20)
-  url = 'https://hagedoo.de'
-  @browser.navigate.to url
+  # url = 'https://hagedoo.de'
+  @url_project = 'https://staging.hagedoo.de/'
+  @browser.navigate.to @url_project
 end
 
 And(/^I go to page for autorization page for authorization\.$/) do

@@ -82,6 +82,8 @@ browser = Selenium::WebDriver.for(:remote, :url => url, :desired_capabilities =>
 #else
 #  browser = Selenium::WebDriver.for(:remote, :url => url, :desired_capabilities => capabilities)
 #end
+#
+@url_project = 'https://dev761.hagedoo.de/'
 
 Before do |scenario|
   @browser = browser

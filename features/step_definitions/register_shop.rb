@@ -60,8 +60,9 @@ my_user.timeuser_minutes
 Given(/^I go to register a shop page.$/) do
   @browser.manage.window.maximize
   @wait = Selenium::WebDriver::Wait.new(timeout: 20)
-  url = 'https://hagedoo.de/arbeitsplatz/store-registrieren'
-  @browser.navigate.to url
+  # url = 'https://hagedoo.de/arbeitsplatz/store-registrieren'
+  @url_project = 'https://staging.hagedoo.de/'
+  @browser.navigate.to @url_project + 'arbeitsplatz/store-registrieren'
 end
 
 When(/^Enter the firstname in the textbox$/) do
@@ -97,6 +98,7 @@ end
 
 Then(/^I accept the terms and conditions and privacy policy$/) do
   @browser.find_element(xpath: "//input[@name='accept']").click
+  @browser.find_element(xpath: "//input[@name='policy']").click
   @browser.find_element(xpath: "//button[@class='submitButton']")
   my_btn = @browser.find_element(xpath: "//button[@class='submitButton']")
   my_btn.location_once_scrolled_into_view

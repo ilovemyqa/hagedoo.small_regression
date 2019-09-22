@@ -1,8 +1,9 @@
 Given(/^I open browser for handworker page\.$/) do
   @browser.manage.window.maximize
   @wait = Selenium::WebDriver::Wait.new(timeout: 20)
-  url = 'https://hagedoo.de/handwerker'
-  @browser.navigate.to url
+  # url = 'https://hagedoo.de/handwerker'
+  @url_project = 'https://staging.hagedoo.de/'
+  @browser.navigate.to @url_project + 'handwerker'
 
 end
 
@@ -20,8 +21,8 @@ end
 And(/^Click the Sign in directly button\.$/) do
   @browser.find_element(xpath: "//div[@class='zip-with-count']/a[@class='btn register']").click
   @wait.until { @browser.find_element(xpath: "//form[@class='form handwerker-form']/h1[@class='title']").displayed? }
-  url = 'https://hagedoo.de/handwerker'
-  @browser.navigate.to url
+  # url = 'https://hagedoo.de/handwerker'
+  @browser.navigate.to @url_project + 'handwerker'
 end
 
 And(/^Click the Craftsman Dashboard button\.$/) do

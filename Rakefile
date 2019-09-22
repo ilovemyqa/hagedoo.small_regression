@@ -1,40 +1,6 @@
-# frozen_string_literal: true
-
 require 'rubygems'
 require 'cucumber'
 require 'cucumber/rake/task'
-
-# require 'parallel'
-
-# @browsers = JSON.load(open('browsers.json'))
-# @parallel_limit = ENV['BS_PLATFORM'] || 1
-# @parallel_limit = @parallel_limit.to_i
-
-# task :cucumber do
-#  Parallel.each(@browsers, :in_processes => @parallel_limit) do |browser|
-#    begin
-#      puts "Running with: #{browser.inspect}"
-#
-#      Rake::Task[:run_features].execute()
-#    rescue Exception => e
-#      puts "Error while running task"
-#    end
-#  end
-# end
-
-# task :cucumber do
-#  begin
-#    #puts "Running with: #{@browser.}"
-
-#    Rake::Task[:create_customer_testcase].execute()
-#  rescue Exception => e
-#    puts "Error while running task"
-#  end
-# end
-
-# Cucumber::Rake::Task.new(:run_features)
-# task :default => [:cucumber]
-#
 
 Cucumber::Rake::Task.new(:create_customer_testcase) do |t| # 1
   t.profile = 'default'
@@ -53,7 +19,7 @@ end
 
 Cucumber::Rake::Task.new(:signup_craftsman_and_activation_and_go_account_settings) do |t| # 4
   t.profile = 'default'
-  t.cucumber_opts = '--tags @signup_craftsman_and_activation_and_go_account-settings'
+  t.cucumber_opts = '--tags @signup_craftsman_and_activation_and_go_account_settings'
 end
 
 Cucumber::Rake::Task.new(:inviting_a_new_person_to_the_workspace) do |t| # 5

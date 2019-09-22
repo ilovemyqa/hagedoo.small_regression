@@ -59,11 +59,16 @@ my_user.timeuser_minutes
 Given(/^I open browser\.$/) do
   @browser.manage.window.maximize
   @wait = Selenium::WebDriver::Wait.new(timeout: 20)
-  url = 'https://hagedoo.de'
-  @browser.navigate.to url
+  # url = 'https://hagedoo.de'
+  @url_project = 'https://staging.hagedoo.de/'
+  @browser.navigate.to @url_project
 end
 
 And(/^I go to main page\.$/) do
+  if @browser.find_element(xpath: "//div[@class='count-container']/div[@class='cookieConsent cookie-cont']/button[@class='btn-cookie']")
+    @browser.find_element(xpath: "//div[@class='count-container']/div[@class='cookieConsent cookie-cont']/button[@class='btn-cookie']").click
+  end
+
   @browser.find_element(xpath: "//li[@class='header-item header-button header-login ']/a[.='Login']").click
   @wait.until { @browser.find_element(xpath: "//form[@class='form']/h1[@class='login-title']").displayed? }
   @browser.find_element(xpath: "//div[@class='workspace']/div[@class='btn-group']/a[@class='new-login']")
@@ -103,6 +108,7 @@ end
 
 Then(/^I accept the terms and conditions and privacy policy customer licence\.$/) do
   @browser.find_element(xpath: "//input[@name='accept']").click
+  @browser.find_element(xpath: "//input[@name='policy']").click
   @browser.find_element(xpath: "//button[@class='btn-submit disabled']").click
 end
 
