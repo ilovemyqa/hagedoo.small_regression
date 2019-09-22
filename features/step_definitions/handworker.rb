@@ -61,8 +61,10 @@ end
 
 And(/^I find element footer title handworker\.$/) do
   zipcode = 10117
-  @browser.find_element(xpath: "//div[@class='footer-form']/div[@class='form-inner']/div[@class='zipcode-box']/div[@class='zipcode-cont']/input[@name='zipcode']").send_keys zipcode
-  @browser.find_element(xpath: "//div[@class='footer-form']/div[@class='form-inner']/button[@class='btn register']").click
+  # @browser.find_element(xpath: "//div[@class='footer-form']/div[@class='form-inner']/div[@class='zipcode-box']/div[@class='zipcode-cont']/input[@name='zipcode']").send_keys zipcode
+  @browser.find_element(xpath: "//div[@class='form-inner']/div[@class='zipcode-box']/div[@class='zipcode-cont']/input[@name='zipcode']").send_keys zipcode
+  @browser.find_element(xpath: "//div[@class='form-inner']/button[@class='btn register']").click
+  # @browser.find_element(xpath: "//div[@class='footer-form']/div[@class='form-inner']/button[@class='btn register']").click
   @wait.until { @browser.find_element(xpath: "//form[@class='form handwerker-form']/h1[@class='title']").displayed? }
 end
 
