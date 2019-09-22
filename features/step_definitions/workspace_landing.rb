@@ -7,9 +7,11 @@ Given(/^I open browser for workspace page\.$/) do
 end
 
 When(/^I go to workspace landing page\.$/) do
-  url = 'https://hagedoo.de/arbeitsplatz'
-  @browser.navigate.to url
+  # url = 'https://hagedoo.de/arbeitsplatz'
+  @browser.navigate.to @url_project + 'arbeitsplatz'
   @wait.until { @browser.find_element(xpath: "//div[@class='header-container']/div[@class='container-left']/h1[@class='title']").displayed? }
+
+  @browser.find_element(xpath: "//div[@class='count-container']/div[@class='cookieConsent cookie-cont']/button[@class='btn-cookie']").click
 end
 
 And(/^I find general page title\.$/) do
@@ -58,9 +60,11 @@ And(/^I find autorization menu\.$/) do
   my_el4 = @browser.find_element(xpath: "//div[@class='hagebau-service']")
   my_el4.location_once_scrolled_into_view
 
-  if @browser.find_element(xpath: "//div[@class='count-container']/div[@class='cookieConsent cookie-cont']/button[@class='btn-cookie']")
-    @browser.find_element(xpath: "//div[@class='count-container']/div[@class='cookieConsent cookie-cont']/button[@class='btn-cookie']").click
-  end
+  # if @browser.find_element(xpath: "//div[@class='count-container']/div[@class='cookieConsent cookie-cont']/button[@class='btn-cookie']")
+    # @browser.find_element(xpath: "//div[@class='count-container']/div[@class='cookieConsent cookie-cont']/button[@class='btn-cookie']").click
+  # end
+
+  @browser.find_element(xpath: "//div[@class='count-container']/div[@class='cookieConsent cookie-cont']/button[@class='btn-cookie']").click
 
   @browser.find_element(xpath: "//div[@class='hagebau-service']/div[@class='buttons-block']/button[@class='register']").click
   @wait.until { @browser.find_element(xpath: "//div[@class='container']/h1[@class='title']").displayed? }

@@ -17,15 +17,15 @@ Cucumber::Rake::Task.new(:register_shop_testcase) do |t| # 3
   t.cucumber_opts = '--tags @register_shop_testcase'
 end
 
-Cucumber::Rake::Task.new(:signup_craftsman_and_activation_and_go_account_settings) do |t| # 4
-  t.profile = 'default'
-  t.cucumber_opts = '--tags @signup_craftsman_and_activation_and_go_account_settings'
-end
+# Cucumber::Rake::Task.new(:signup_craftsman_and_activation_and_go_account_settings) do |t| # 4
+#  t.profile = 'default'
+#  t.cucumber_opts = '--tags @signup_craftsman_and_activation_and_go_account_settings'
+# end
 
-Cucumber::Rake::Task.new(:inviting_a_new_person_to_the_workspace) do |t| # 5
-  t.profile = 'default'
-  t.cucumber_opts = '--tags @inviting_a_new_person_to_the_workspace'
-end
+# Cucumber::Rake::Task.new(:inviting_a_new_person_to_the_workspace) do |t| # 5
+#  t.profile = 'default'
+#  t.cucumber_opts = '--tags @inviting_a_new_person_to_the_workspace'
+# end
 
 Cucumber::Rake::Task.new(:how_it_works) do |t| # 6
   t.profile = 'default'
@@ -55,8 +55,8 @@ end
 task :default => :create_customer_testcase
 task :default => :activation_new_user_for_admin
 task :default => :register_shop_testcase
-task :default => :signup_craftsman_and_activation_and_go_account_settings
-task :default => :inviting_a_new_person_to_the_workspace
+# task :default => :signup_craftsman_and_activation_and_go_account_settings
+# task :default => :inviting_a_new_person_to_the_workspace
 task :default => :how_it_works
 task :default => :about_us
 task :default => :agb
