@@ -12,10 +12,10 @@ Cucumber::Rake::Task.new(:activation_new_user_for_admin) do |t| # 2
   t.cucumber_opts = '--tags @activation_new_user_for_admin'
 end
 
-Cucumber::Rake::Task.new(:register_shop_testcase) do |t| # 3
-  t.profile = 'default'
-  t.cucumber_opts = '--tags @register_shop_testcase'
-end
+# Cucumber::Rake::Task.new(:register_shop_testcase) do |t| # 3
+#  t.profile = 'default'
+#  t.cucumber_opts = '--tags @register_shop_testcase'
+# end
 
 # Cucumber::Rake::Task.new(:signup_craftsman_and_activation_and_go_account_settings) do |t| # 4
 #  t.profile = 'default'
