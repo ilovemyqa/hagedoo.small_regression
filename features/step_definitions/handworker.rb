@@ -1,6 +1,6 @@
 Given(/^I open browser for handworker page\.$/) do
   @browser.manage.window.maximize
-  @wait = Selenium::WebDriver::Wait.new(timeout: 40)
+  @wait = Selenium::WebDriver::Wait.new(timeout: 60)
   # url = 'https://hagedoo.de/handwerker'
   @url_project = 'https://staging.hagedoo.de/'
   @browser.navigate.to @url_project + 'handwerker'
