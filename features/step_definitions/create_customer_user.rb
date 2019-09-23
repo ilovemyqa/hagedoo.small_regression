@@ -65,9 +65,9 @@ Given(/^I open browser\.$/) do
 end
 
 And(/^I go to main page\.$/) do
-  if @browser.find_element(xpath: "//div[@class='count-container']/div[@class='cookieConsent cookie-cont']/button[@class='btn-cookie']").displayed?
-    @browser.find_element(xpath: "//div[@class='count-container']/div[@class='cookieConsent cookie-cont']/button[@class='btn-cookie']").click
-  end
+  # if @browser.find_element(xpath: "//div[@class='count-container']/div[@class='cookieConsent cookie-cont']/button[@class='btn-cookie']").displayed?
+  #  @browser.find_element(xpath: "//div[@class='count-container']/div[@class='cookieConsent cookie-cont']/button[@class='btn-cookie']").click
+  # end
 
   @browser.find_element(xpath: "//li[@class='header-item header-button header-login ']/a[.='Login']").click
   @wait.until { @browser.find_element(xpath: "//form[@class='form']/h1[@class='login-title']").displayed? }

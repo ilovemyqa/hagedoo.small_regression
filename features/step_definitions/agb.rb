@@ -7,7 +7,7 @@ Given(/^I open browser for AGB page\.$/) do
 end
 
 When(/^I go to AGB page\.$/) do
-  @browser.find_element(xpath: "//div[@class='count-container']/div[@class='cookieConsent cookie-cont']/button[@class='btn-cookie']").click
+  # @browser.find_element(xpath: "//div[@class='count-container']/div[@class='cookieConsent cookie-cont']/button[@class='btn-cookie']").click
 
   # @browser.find_element(xpath: "//div[@class='footer-block legal-links']/ul/li/a[@href='/datenschutz']")
   # my_btn = @browser.find_element(xpath: "//div[@class='footer-block legal-links']/ul/li/a[@href='/datenschutz']")
