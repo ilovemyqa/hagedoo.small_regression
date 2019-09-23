@@ -20,7 +20,7 @@ end
 
 And(/^Click the Sign in directly button\.$/) do
   # @browser.find_element(xpath: "//div[@class='zip-with-count']/a[@class='btn register']").click
-  @browser.find_element(xpath: "//div[@dlass='form-inner']/a[@class='btn register']").click
+  @browser.find_element(xpath: "//div[@class='form-inner']/a[@class='btn register']").click
   # @wait.until { @browser.find_element(xpath: "//form[@class='form handwerker-form']/h1[@class='title']").displayed? }
   @wait.until { @browser.find_element(xpath: "//h1[@class='title']").displayed? }
   # url = 'https://hagedoo.de/handwerker'
