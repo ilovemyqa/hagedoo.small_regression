@@ -9,7 +9,8 @@ end
 
 When(/^Enter the zipcode in the textbox\.$/) do
   zipcode = 10117
-  @browser.find_element(xpath: "//div[@class='zipcode-box']/div[@class='zipcode-cont']/input[@name='zipcode']").send_keys zipcode
+  # @browser.find_element(xpath: "//div[@class='zipcode-box']/div[@class='zipcode-cont']/input[@name='zipcode']").send_keys zipcode
+  @browser.find_element(xpath: "//div[@class='header-form']/div[@class='form-container']/div[@class='styles-sc-1htfc9h-0 hBqQeE']/form/div[@class='form-inner']/div[@class='zipcode-box']/div[@class='zipcode-cont']/input[@name='zipcode']").send_keys zipcode
 end
 
 And(/^Click the calculate new button\.$/) do
