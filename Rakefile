@@ -54,7 +54,7 @@ end
 
 task :default => :create_customer_testcase
 task :default => :activation_new_user_for_admin
-task :default => :register_shop_testcase
+# task :default => :register_shop_testcase
 # task :default => :signup_craftsman_and_activation_and_go_account_settings
 # task :default => :inviting_a_new_person_to_the_workspace
 task :default => :how_it_works
