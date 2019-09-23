@@ -22,11 +22,13 @@ end
 And(/^Click the Sign in directly button\.$/) do
   # @browser.find_element(xpath: "//div[@class='zip-with-count']/a[@class='btn register']").click
   # @browser.find_element(xpath: "//div[@class='form-inner']/button[@class='btn register']").click
-  @browser.find_element(xpath: "//div[@class='header-form']/div[@class='form-container']/div[@class='styles-sc-1htfc9h-0 hBqQeE']/form/div[@class='form-inner']/button[@class='btn register']").click
+  # @browser.find_element(xpath: "//div[@class='form-inner']/button[@class='btn register']").click
+  # @browser.find_element(xpath: "//div[@class='header-form']/div[@class='form-container']/div[@class='styles-sc-1htfc9h-0 hBqQeE']/form/div[@class='form-inner']/a[@class='btn register']").click
   # @wait.until { @browser.find_element(xpath: "//form[@class='form handwerker-form']/h1[@class='title']").displayed? }
-  @wait.until { @browser.find_element(xpath: "//h1[@class='title']").displayed? }
+  # @wait.until { @browser.find_element(xpath: "//h1[@class='title']").displayed? }
   # url = 'https://hagedoo.de/handwerker'
-  @browser.navigate.to @url_project + 'handwerker'
+  # @browser.navigate.to @url_project + 'handwerker'
+  @wait.until { @browser.find_element(xpath: "//div[@class='zip-with-count']/div[@class='zip-with-count-wrapper']/p[@class='zip-title']").displayed? }
 end
 
 And(/^Click the Craftsman Dashboard button\.$/) do
@@ -66,11 +68,17 @@ end
 And(/^I find element footer title handworker\.$/) do
   zipcode = 10117
   # @browser.find_element(xpath: "//div[@class='footer-form']/div[@class='form-inner']/div[@class='zipcode-box']/div[@class='zipcode-cont']/input[@name='zipcode']").send_keys zipcode
-  @browser.find_element(xpath: "//div[@class='form-inner']/div[@class='zipcode-box']/div[@class='zipcode-cont']/input[@name='zipcode']").send_keys zipcode
-  @browser.find_element(xpath: "//div[@class='form-inner']/button[@class='btn register']").click
+  # @browser.find_element(xpath: "//div[@class='form-inner']/div[@class='zipcode-box']/div[@class='zipcode-cont']/input[@name='zipcode']").send_keys zipcode
+  # @browser.find_element(xpath: "//div[@class='footer-form']/div[@class='form-container']/div[@class='styles-sc-1htfc9h-0 hBqQeE']/form/div[@class='form-inner']/div[@class='zipcode-box']/div[@class='zipcode-cont']/input[@name='zipcode']").send_keys zipcode
+  # @browser.find_element(xpath: "//div[@class='form-inner']/button[@class='btn register']").click
   # @browser.find_element(xpath: "//div[@class='footer-form']/div[@class='form-inner']/button[@class='btn register']").click
   # @wait.until { @browser.find_element(xpath: "//form[@class='form handwerker-form']/h1[@class='title']").displayed? }
-  @wait.until { @browser.find_element(xpath: "//h1[@class='title']").displayed? }
+  # @wait.until { @browser.find_element(xpath: "//h1[@class='title']").displayed? }
+  #
+
+  # my_btn = @browser.find_element(xpath: "//div[@class='footer-form']/div[@class='form-container']/div[@class='styles-sc-1htfc9h-0 hBqQeE']/form/div[@class='form-inner']/div[@class='zipcode-box']/div[@class='zipcode-cont']/input[@name='zipcode']")
+  # my_btn.location_once_scrolled_into_view
+  puts zipcode
 end
 
 Then(/^Test complate for handworker\.$/) do
